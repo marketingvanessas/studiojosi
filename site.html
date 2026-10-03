@@ -270,6 +270,36 @@
   .step-title{font-weight:600;margin:0 0 .5rem;font-size:1.05rem;}
   .steps p{color:var(--ink-soft);font-size:.9rem;margin:0;}
 
+  /* ---------- Course spotlight (Comandante das Cores) ---------- */
+  .course-spotlight{background:var(--walnut);color:var(--cream-on-walnut);}
+  .course-spotlight-inner{display:grid;grid-template-columns:auto 1fr;gap:clamp(36px,6vw,76px);align-items:center;}
+  .course-copy{min-width:0;}
+  @media(max-width:780px){
+    .course-spotlight-inner{grid-template-columns:1fr;text-align:center;}
+    .course-badge{justify-self:center;}
+    .course-copy{max-width:46ch;margin:0 auto;}
+    .course-spotlight .eyebrow{justify-content:center;}
+    .course-list{align-items:center;}
+  }
+  .course-badge{flex:none;}
+  .course-badge-ring{
+    width:clamp(168px,20vw,210px);height:clamp(168px,20vw,210px);border-radius:50%;
+    border:1.5px solid var(--brass-light);position:relative;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  }
+  .course-badge-ring::before{content:"";position:absolute;inset:9px;border:1px solid rgba(217,190,143,.4);border-radius:50%;}
+  .course-badge-ring svg{color:var(--brass-light);}
+  .course-badge-title{font-family:"Fraunces",serif;font-style:italic;font-weight:500;font-size:1.2rem;line-height:1.18;color:var(--cream-on-walnut);}
+  .course-badge-sub{font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-light);}
+  .course-spotlight .eyebrow{color:var(--brass-light);}
+  .course-spotlight .eyebrow::before{background:var(--brass-light);}
+  .course-spotlight h2{color:var(--cream-on-walnut);}
+  .course-spotlight h2 em{color:var(--brass-light);}
+  .course-spotlight .lead{color:var(--ink-faint);max-width:56ch;}
+  .course-list{list-style:none;margin:1.5rem 0 2.1rem;padding:0;display:flex;flex-direction:column;gap:.85rem;}
+  .course-list li{display:flex;gap:.7em;align-items:flex-start;color:var(--ink-faint);font-size:.95rem;}
+  .course-list svg{flex-shrink:0;margin-top:.2em;color:var(--brass-light);}
+
   /* ---------- Gallery (auto-scrolling carousel) ---------- */
   .gallery-track-wrap{overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 3%,#000 97%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 3%,#000 97%,transparent 100%);}
   .gallery-track{display:flex;gap:18px;width:max-content;animation:gallery-scroll 26s linear infinite;}
@@ -544,37 +574,25 @@
     </div>
   </section>
 
-  <section id="cursos">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow" style="justify-content:center">Exclusividade da Comandante das Cores</p>
-        <h2>Cursos de Colorimetria com a Josi</h2>
-        <p class="lead" style="margin:0 auto">Mais de 30 anos de experiência viraram curso presencial, mentoria e palestras para quem quer dominar cores de verdade.</p>
+  <section id="cursos" class="course-spotlight">
+    <div class="container course-spotlight-inner">
+      <div class="course-badge reveal" aria-hidden="true">
+        <div class="course-badge-ring">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6L22 9.3l-5 4.9 1.3 7L12 17.8 5.7 21.2 7 14.2l-5-4.9 7.1-.7z"/></svg>
+          <span class="course-badge-title">Comandante<br>das Cores</span>
+          <span class="course-badge-sub">Certificado oficial</span>
+        </div>
       </div>
-      <ol class="steps reveal-group">
-        <li class="is-dark reveal" style="--i:0">
-          <div class="step-icon" data-n="01"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/><path d="M20 8v6"/></svg></div>
-          <h3 class="step-title">Curso presencial de colorimetria</h3>
-          <p>Técnica e prática de ponta a ponta, direto com quem vive de cor há mais de 30 anos.</p>
-        </li>
-        <li class="reveal" style="--i:1">
-          <div class="step-icon" data-n="02"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M9 12.5 7.5 21 12 18.5 16.5 21 15 12.5"/></svg></div>
-          <h3 class="step-title">Certificado Comandante das Cores</h3>
-          <p>Título exclusivo da Josi, entregue a quem conclui o curso presencial.</p>
-        </li>
-        <li class="reveal" style="--i:2">
-          <div class="step-icon" data-n="03"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7.5" r="3.2"/><path d="M5 20c0-3.9 3.1-6.5 7-6.5s7 2.6 7 6.5"/></svg></div>
-          <h3 class="step-title">Mentoria individual</h3>
-          <p>Acompanhamento pra profissionais que querem evoluir na colorimetria.</p>
-        </li>
-        <li class="is-dark reveal" style="--i:3">
-          <div class="step-icon" data-n="04"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4a1 1 0 0 0 1 1h2l5 4V5L6 9H4a1 1 0 0 0-1 1Z"/><path d="M15 8a4 4 0 0 1 0 8M18 5a7.5 7.5 0 0 1 0 14"/></svg></div>
-          <h3 class="step-title">Palestras</h3>
-          <p>Para equipes e eventos do setor, levando a visão da Josi sobre cores e carreira.</p>
-        </li>
-      </ol>
-      <div style="text-align:center;margin-top:2.4rem;">
-        <a class="btn btn-primary wa-link" href="https://wa.me/5543991046289?text=Ol%C3%A1%21%20Vi%20no%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20de%20colorimetria%20com%20a%20Comandante%20das%20Cores.">
+      <div class="course-copy reveal">
+        <p class="eyebrow">Formação exclusiva da Josi</p>
+        <h2>Vire <em>Comandante das Cores</em></h2>
+        <p class="lead">Mais de 30 anos de experiência viraram curso presencial, mentoria e palestras para quem quer dominar cores de verdade — e sair com o certificado que leva o título que só a Josi carrega.</p>
+        <ul class="course-list">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg> Curso presencial de colorimetria</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg> Mentoria individual para profissionais</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg> Palestras para equipes e eventos do setor</li>
+        </ul>
+        <a class="btn btn-on-dark wa-link" href="https://wa.me/5543991046289?text=Ol%C3%A1%21%20Vi%20no%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20de%20colorimetria%20com%20a%20Comandante%20das%20Cores.">
           <span class="btn-label">Quero saber sobre os cursos</span><span class="spinner"></span>
         </a>
       </div>
