@@ -286,11 +286,17 @@
     width:clamp(168px,20vw,210px);height:clamp(168px,20vw,210px);border-radius:50%;
     border:1.5px solid var(--brass-light);position:relative;
     display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+    padding:0 18px;
   }
   .course-badge-ring::before{content:"";position:absolute;inset:9px;border:1px solid rgba(217,190,143,.4);border-radius:50%;}
   .course-badge-ring svg{color:var(--brass-light);}
-  .course-badge-title{font-family:"Fraunces",serif;font-style:italic;font-weight:500;font-size:1.2rem;line-height:1.18;color:var(--cream-on-walnut);}
-  .course-badge-sub{font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-light);}
+  .course-badge-title{font-family:"Fraunces",serif;font-style:italic;font-weight:500;font-size:1.2rem;line-height:1.18;color:var(--cream-on-walnut);text-align:center;}
+  .course-badge-sub{font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--brass-light);text-align:center;white-space:nowrap;}
+  @media(max-width:480px){
+    .course-badge-ring{width:178px;height:178px;padding:0 14px;}
+    .course-badge-title{font-size:1.02rem;}
+    .course-badge-sub{font-size:.56rem;letter-spacing:.04em;}
+  }
   .course-spotlight .eyebrow{color:var(--brass-light);}
   .course-spotlight .eyebrow::before{background:var(--brass-light);}
   .course-spotlight h2{color:var(--cream-on-walnut);}
@@ -454,8 +460,8 @@
       order:-1;
     }
     .hero-copy{max-width:100%;padding:28px 20px 36px;}
-    .about-visual{margin:0 calc(50% - 50vw) 2.5rem;width:100vw;}
-    .about-visual .photo-panel{-webkit-mask-image:none;mask-image:none;border-radius:0;}
+    .about-visual{margin-bottom:2.5rem;}
+    .about-visual .photo-panel{-webkit-mask-image:none;mask-image:none;}
     .doctor-card{position:relative;z-index:1;margin-top:-40px;margin-left:16px;max-width:calc(100% - 32px);}
     .footer-inner{justify-content:center;text-align:center;}
     .footer-brand{max-width:100%;}
