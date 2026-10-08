@@ -526,7 +526,7 @@
   .prop-mode-toggle:focus-visible { outline: 2px solid var(--accent-deep); outline-offset: 2px; }
 
   /* ================= Shared doc chrome ================= */
-  .prop-doc { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+  .prop-doc { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
   .prop-rule { display: block; width: 44px; height: 4px; background: var(--wood); margin-bottom: 20px; border-radius: 2px; }
   .prop-eyebrow { font-family: var(--font-body); font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-deep); margin: 0 0 8px; }
 
@@ -629,9 +629,10 @@
   .invlist { list-style: none; margin: 0 0 10px; padding: 0; display: flex; flex-direction: column; gap: 7px; }
   .invlist li { display: flex; gap: 8px; font-size: 0.85rem; line-height: 1.45; color: var(--ink); }
   .invlist li::before { content: "✓"; color: var(--accent-deep); font-weight: 700; flex: none; }
-  .invprice { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; flex-wrap: wrap; }
+  .invprice { display: flex; align-items: baseline; gap: 10px; margin-bottom: 2px; flex-wrap: wrap; }
   .invprice .old { text-decoration: line-through; color: var(--ink-faint); font-size: 0.88rem; }
   .invprice .now { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: var(--accent-deep); }
+  .invprice-note { font-size: 0.76rem; color: var(--ink-faint); margin: 0 0 6px; }
   .invdivider { border-top: 1px solid var(--line); margin: 16px 0; }
   .invpricelabel { font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; color: var(--ink); margin-bottom: 6px; }
   .prazobanner { display: flex; align-items: center; gap: 20px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 16px; padding: 20px 24px; margin-top: 20px; }
@@ -2119,7 +2120,7 @@
     <p class="prop-eyebrow">Investimento</p>
     <h2>Três opções, a Completa primeiro</h2>
     <p class="prop-lede">Inclui a migração do que o Studio já tem hoje no AVEC: clientes, histórico e agenda entram no sistema, nada se perde.</p>
-    <p class="prop-lede" style="margin-top: 8px;">Valores em definição junto com a Josi — os preços abaixo aparecem como "A definir" até a proposta ser fechada.</p>
+    <p class="prop-lede" style="margin-top: 8px;">Cada módulo do sistema custa R$ 1.200 na adesão; o site institucional, R$ 3.500. O valor de cada opção é a soma dos módulos que ela inclui.</p>
 
     <div class="invgrid">
       <div class="invcard rec">
@@ -2129,23 +2130,23 @@
         <p class="desc">Da triagem automática no WhatsApp até o caixa fechado e os relatórios do mês, com site e agendamento direto pelo Google — tudo dentro de um sistema só.</p>
         <div class="invdivider"></div>
 
-        <div class="invsec">Adesão, implantação única</div>
+        <div class="invsec">Adesão, implantação única · 6 módulos + site</div>
         <ul class="invlist">
           <li>Triagem automática 24/7 no WhatsApp</li>
           <li>Agenda unificada: salão, noivas/debutantes e curso numa tela só</li>
-          <li>Processo dedicado de noivas e debutantes, com dono e prazo de resposta</li>
-          <li>Fila de espera com horário garantido pra quem só quer a Josi</li>
+          <li>Processo dedicado de noivas e debutantes, com fila de espera e horário garantido pra quem só quer a Josi</li>
           <li>Caixa diário obrigatório no fechamento</li>
           <li>Anamnese digital centralizada</li>
           <li>Relatórios gerenciais e indicadores por profissional</li>
           <li>Site institucional com SEO e agendamento direto pelo Google</li>
-          <li>Migração de dados do AVEC: clientes, histórico e agenda</li>
+          <li>Migração de dados do AVEC incluída, sem custo extra</li>
         </ul>
         <div class="invdivider"></div>
         <div class="invpricelabel">Adesão</div>
         <div class="invprice">
-          <span class="now">A definir</span>
+          <span class="now">R$ 10.700</span>
         </div>
+        <p class="invprice-note">6 módulos × R$ 1.200 + site R$ 3.500</p>
         <div class="invdivider"></div>
 
         <div class="invsec">Mensalidade, tudo incluso</div>
@@ -2158,7 +2159,7 @@
         <div class="invdivider"></div>
         <div class="invpricelabel">Mensalidade</div>
         <div class="invprice">
-          <span class="now">A definir/mês</span>
+          <span class="now">R$ 2.000/mês</span>
         </div>
       </div>
 
@@ -2168,20 +2169,20 @@
         <p class="desc">Resolve primeiro o que já derruba cliente hoje: noiva sem resposta, agenda fragmentada e caixa sem fechar.</p>
         <div class="invdivider"></div>
 
-        <div class="invsec">Adesão, implantação única</div>
+        <div class="invsec">Adesão, implantação única · 4 módulos</div>
         <ul class="invlist">
-          <li>Processo dedicado de noivas e debutantes, com dono e prazo de resposta</li>
-          <li>Fila de espera com horário garantido pra quem só quer a Josi</li>
+          <li>Processo dedicado de noivas e debutantes, com fila de espera e horário garantido pra quem só quer a Josi</li>
           <li>Triagem automática 24/7 no WhatsApp</li>
           <li>Agenda unificada: salão, noivas/debutantes e curso numa tela só</li>
           <li>Caixa diário obrigatório no fechamento</li>
-          <li>Migração de dados do AVEC: clientes e agenda ativa</li>
+          <li>Migração de dados do AVEC incluída, sem custo extra</li>
         </ul>
         <div class="invdivider"></div>
         <div class="invpricelabel">Adesão</div>
         <div class="invprice">
-          <span class="now">A definir</span>
+          <span class="now">R$ 4.800</span>
         </div>
+        <p class="invprice-note">4 módulos × R$ 1.200</p>
         <div class="invdivider"></div>
 
         <div class="invsec">Mensalidade</div>
@@ -2193,7 +2194,7 @@
         <div class="invdivider"></div>
         <div class="invpricelabel">Mensalidade</div>
         <div class="invprice">
-          <span class="now">A definir/mês</span>
+          <span class="now">R$ 1.650/mês</span>
         </div>
       </div>
 
@@ -2203,17 +2204,18 @@
         <p class="desc">Processo dedicado com dono e prazo de resposta, e a agenda unificada numa tela só. O resto entra depois, sem refazer nada do que já estiver rodando.</p>
         <div class="invdivider"></div>
 
-        <div class="invsec">Adesão, implantação única</div>
+        <div class="invsec">Adesão, implantação única · 2 módulos</div>
         <ul class="invlist">
-          <li>Processo dedicado de noivas e debutantes, com dono e prazo de resposta</li>
-          <li>Fila de espera com horário garantido pra quem só quer a Josi</li>
+          <li>Processo dedicado de noivas e debutantes, com fila de espera e horário garantido pra quem só quer a Josi</li>
           <li>Agenda unificada: salão, noivas/debutantes e curso numa tela só</li>
+          <li>Migração de dados do AVEC incluída, sem custo extra</li>
         </ul>
         <div class="invdivider"></div>
         <div class="invpricelabel">Adesão</div>
         <div class="invprice">
-          <span class="now">A definir</span>
+          <span class="now">R$ 2.400</span>
         </div>
+        <p class="invprice-note">2 módulos × R$ 1.200</p>
         <div class="invdivider"></div>
 
         <div class="invsec">Mensalidade</div>
@@ -2223,7 +2225,7 @@
         <div class="invdivider"></div>
         <div class="invpricelabel">Mensalidade</div>
         <div class="invprice">
-          <span class="now">A definir/mês</span>
+          <span class="now">R$ 1.200/mês</span>
         </div>
       </div>
     </div>
