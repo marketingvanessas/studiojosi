@@ -614,15 +614,31 @@
   .prop-benefits li strong { color: var(--ink); }
   .prop-footnote { font-size: 0.8rem; color: var(--ink-faint); margin-top: 14px; line-height: 1.6; }
 
-  /* ================= Pricing ================= */
-  .prop-invest { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-bottom: 24px; }
-  .prop-invest-card { border: 1px solid var(--line); border-radius: 16px; padding: 26px; position: relative; background: var(--surface); }
-  .prop-invest-card .tag { position: absolute; top: 20px; right: 20px; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: var(--accent-soft); color: var(--accent-deep); padding: 5px 10px; border-radius: 100px; }
-  .prop-invest-card .label { font-size: 0.78rem; color: var(--ink-faint); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
-  .prop-invest-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; margin: 8px 0 14px; }
-  .prop-invest-card .price { font-family: var(--font-display); font-weight: 700; font-size: 1.9rem; color: var(--ink-faint); }
-  .prop-invest-card .price small { font-family: var(--font-body); font-weight: 500; font-size: 0.95rem; color: var(--ink-faint); }
-  .prop-invest-card p.desc { font-size: 0.86rem; color: var(--ink-soft); margin-top: 14px; line-height: 1.6; }
+  /* ================= Pricing (3 opções, modelo Imbrasil) ================= */
+  .invgrid { display: grid; grid-template-columns: repeat(3, minmax(240px, 340px)); gap: 22px; margin: 20px 0 24px; justify-content: center; }
+  @media (max-width: 1100px) { .invgrid { grid-template-columns: repeat(2, minmax(240px, 360px)); } }
+  @media (max-width: 760px) { .invgrid { grid-template-columns: 1fr; max-width: 380px; margin-inline: auto; } }
+  .invcard { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 26px; position: relative; display: flex; flex-direction: column; }
+  .invcard.rec { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  .invribbon { position: absolute; top: -12px; left: 24px; background: var(--accent); color: var(--paper); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 12px; border-radius: 999px; font-family: var(--font-body); }
+  .invkicker { font-family: var(--font-body); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-faint); font-weight: 700; margin-bottom: 6px; }
+  .invcard h4 { font-family: var(--font-display); font-weight: 700; font-size: 1.28rem; color: var(--ink); margin: 0 0 8px; }
+  .invcard .desc { font-size: 0.87rem; color: var(--ink-soft); line-height: 1.55; margin-bottom: 4px; }
+  .invsec { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-faint); font-family: var(--font-body); margin: 14px 0 8px; }
+  .invcard .invsec:first-of-type { margin-top: 0; }
+  .invlist { list-style: none; margin: 0 0 10px; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+  .invlist li { display: flex; gap: 8px; font-size: 0.85rem; line-height: 1.45; color: var(--ink); }
+  .invlist li::before { content: "✓"; color: var(--accent-deep); font-weight: 700; flex: none; }
+  .invprice { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; flex-wrap: wrap; }
+  .invprice .old { text-decoration: line-through; color: var(--ink-faint); font-size: 0.88rem; }
+  .invprice .now { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: var(--accent-deep); }
+  .invdivider { border-top: 1px solid var(--line); margin: 16px 0; }
+  .invpricelabel { font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; color: var(--ink); margin-bottom: 6px; }
+  .prazobanner { display: flex; align-items: center; gap: 20px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 16px; padding: 20px 24px; margin-top: 20px; }
+  .prazobanner .pnum { flex: none; font-family: var(--font-display); font-weight: 700; font-size: 2.8rem; color: var(--accent-deep); line-height: 1; }
+  .prazobanner p { font-size: 0.87rem; color: var(--ink); line-height: 1.55; margin: 0; }
+  .prazobanner p b { color: var(--accent-deep); }
+  @media (max-width: 560px) { .prazobanner { flex-direction: column; align-items: flex-start; gap: 8px; } }
   .prop-disclaimer { font-size: 0.82rem; color: var(--ink-faint); border-top: 1px solid var(--line); padding-top: 18px; line-height: 1.7; }
 
   /* ================= CTA ================= */
@@ -2101,34 +2117,123 @@
 
   <section class="prop-section">
     <p class="prop-eyebrow">Investimento</p>
-    <h2>Valores</h2>
-    <p class="prop-lede">Em definição junto com a Josi, os valores abaixo aparecem como rascunho até a proposta ser fechada.</p>
+    <h2>Três opções, a Completa primeiro</h2>
+    <p class="prop-lede">Inclui a migração do que o Studio já tem hoje no AVEC: clientes, histórico e agenda entram no sistema, nada se perde.</p>
+    <p class="prop-lede" style="margin-top: 8px;">Valores em definição junto com a Josi — os preços abaixo aparecem como "A definir" até a proposta ser fechada.</p>
 
-    <div class="prop-invest">
-      <div class="prop-invest-card">
-        <span class="tag">Pagamento único</span>
-        <div class="label">Implantação</div>
-        <h3>Desenvolvimento completo</h3>
-        <div class="price">A definir<small></small></div>
-        <p class="desc">Triagem, agenda unificada, pipeline de noivas, caixa, anamnese digital e migração dos dados do AVEC.</p>
+    <div class="invgrid">
+      <div class="invcard rec">
+        <span class="invribbon">Recomendada</span>
+        <div class="invkicker">Opção Completa</div>
+        <h4>O sistema inteiro da Central Josi, de ponta a ponta</h4>
+        <p class="desc">Da triagem automática no WhatsApp até o caixa fechado e os relatórios do mês, com site e agendamento direto pelo Google — tudo dentro de um sistema só.</p>
+        <div class="invdivider"></div>
+
+        <div class="invsec">Adesão, implantação única</div>
+        <ul class="invlist">
+          <li>Triagem automática 24/7 no WhatsApp</li>
+          <li>Agenda unificada: salão, noivas/debutantes e curso numa tela só</li>
+          <li>Processo dedicado de noivas e debutantes, com dono e prazo de resposta</li>
+          <li>Fila de espera com horário garantido pra quem só quer a Josi</li>
+          <li>Caixa diário obrigatório no fechamento</li>
+          <li>Anamnese digital centralizada</li>
+          <li>Relatórios gerenciais e indicadores por profissional</li>
+          <li>Site institucional com SEO e agendamento direto pelo Google</li>
+          <li>Migração de dados do AVEC: clientes, histórico e agenda</li>
+        </ul>
+        <div class="invdivider"></div>
+        <div class="invpricelabel">Adesão</div>
+        <div class="invprice">
+          <span class="now">A definir</span>
+        </div>
+        <div class="invdivider"></div>
+
+        <div class="invsec">Mensalidade, tudo incluso</div>
+        <ul class="invlist">
+          <li>Hospedagem, banco de dados e integração com o WhatsApp</li>
+          <li>Manutenção do site e do sistema</li>
+          <li>Suporte prioritário e atualizações contínuas</li>
+          <li>Todos os módulos incluídos, sem custo extra</li>
+        </ul>
+        <div class="invdivider"></div>
+        <div class="invpricelabel">Mensalidade</div>
+        <div class="invprice">
+          <span class="now">A definir/mês</span>
+        </div>
       </div>
-      <div class="prop-invest-card">
-        <span class="tag">Adicional</span>
-        <div class="label">Site</div>
-        <h3>Site integrado ao sistema</h3>
-        <div class="price">A definir</div>
-        <p class="desc">Portfólio, presença no Google e agendamento conectado direto à Central Josi, sem depender só do Instagram.</p>
+
+      <div class="invcard">
+        <div class="invkicker">Opção Essencial</div>
+        <h4>O mais crítico agora: atendimento, agenda e caixa</h4>
+        <p class="desc">Resolve primeiro o que já derruba cliente hoje: noiva sem resposta, agenda fragmentada e caixa sem fechar.</p>
+        <div class="invdivider"></div>
+
+        <div class="invsec">Adesão, implantação única</div>
+        <ul class="invlist">
+          <li>Processo dedicado de noivas e debutantes, com dono e prazo de resposta</li>
+          <li>Fila de espera com horário garantido pra quem só quer a Josi</li>
+          <li>Triagem automática 24/7 no WhatsApp</li>
+          <li>Agenda unificada: salão, noivas/debutantes e curso numa tela só</li>
+          <li>Caixa diário obrigatório no fechamento</li>
+          <li>Migração de dados do AVEC: clientes e agenda ativa</li>
+        </ul>
+        <div class="invdivider"></div>
+        <div class="invpricelabel">Adesão</div>
+        <div class="invprice">
+          <span class="now">A definir</span>
+        </div>
+        <div class="invdivider"></div>
+
+        <div class="invsec">Mensalidade</div>
+        <ul class="invlist">
+          <li>Hospedagem e infraestrutura do sistema</li>
+          <li>Suporte e atualizações contínuas</li>
+          <li>1 sessão de treinamento da equipe</li>
+        </ul>
+        <div class="invdivider"></div>
+        <div class="invpricelabel">Mensalidade</div>
+        <div class="invprice">
+          <span class="now">A definir/mês</span>
+        </div>
       </div>
-      <div class="prop-invest-card">
-        <span class="tag">Recorrente</span>
-        <div class="label">Manutenção mensal</div>
-        <h3>Suporte e evolução</h3>
-        <div class="price">A definir<small>/mês</small></div>
-        <p class="desc">Hospedagem, backup, correções e melhorias contínuas conforme a operação do Studio muda, incluindo a manutenção do site.</p>
+
+      <div class="invcard">
+        <div class="invkicker">Opção Básica</div>
+        <h4>O primeiro passo: parar de perder noiva e debutante</h4>
+        <p class="desc">Processo dedicado com dono e prazo de resposta, e a agenda unificada numa tela só. O resto entra depois, sem refazer nada do que já estiver rodando.</p>
+        <div class="invdivider"></div>
+
+        <div class="invsec">Adesão, implantação única</div>
+        <ul class="invlist">
+          <li>Processo dedicado de noivas e debutantes, com dono e prazo de resposta</li>
+          <li>Fila de espera com horário garantido pra quem só quer a Josi</li>
+          <li>Agenda unificada: salão, noivas/debutantes e curso numa tela só</li>
+        </ul>
+        <div class="invdivider"></div>
+        <div class="invpricelabel">Adesão</div>
+        <div class="invprice">
+          <span class="now">A definir</span>
+        </div>
+        <div class="invdivider"></div>
+
+        <div class="invsec">Mensalidade</div>
+        <ul class="invlist">
+          <li>Hospedagem e infraestrutura do sistema</li>
+        </ul>
+        <div class="invdivider"></div>
+        <div class="invpricelabel">Mensalidade</div>
+        <div class="invprice">
+          <span class="now">A definir/mês</span>
+        </div>
       </div>
     </div>
 
-    <p class="prop-disclaimer">Custos de terceiros (como as conversas automáticas do WhatsApp) são cobrados diretamente pela Meta e não fazem parte destes valores.</p>
+    <div class="prazobanner">
+      <div class="pnum">30</div>
+      <p>Dias úteis de prazo pra Fase 1 entrar no ar (processo dedicado de noivas e debutantes), contados a partir do acesso aos dados atuais do Studio e da aprovação desta proposta.</p>
+    </div>
+
+    <p class="prop-disclaimer" style="margin-top: 20px;">Custos de terceiros (como as conversas automáticas do WhatsApp) são cobrados diretamente pela Meta e não fazem parte destes valores.</p>
   </section>
 
   <section class="prop-section prop-cta">
